@@ -88,25 +88,8 @@ O(log n)'''
         '''returns True if heap is empty, False otherwise'''
         return not self.nodes
         
-def sort(lst,cmp=lambda x,y:x<y):
+def heapsort(lst,cmp=lambda x,y:x<y):
     '''Sorting using a heap (heapsort)
 cmp = comparation to be used. Default: x<y'''
     x=heap(lst,cmp)
     return [x.pop() for i in range(len(lst))]
-
-
-#Testing the heap
-print(sort([1,2,3,4,1,2,6,7,2,1,-1]))
-print(sort([9,1,2,7,4],lambda x,y:x>y))
-x=heap([2,9,7])
-print(x.max())
-x.push(11)
-print(x.max())
-x.push_many([13,15])
-print(x.max())
-print(x.pop(),x.pop(),x.pop(),x.pop())
-print(x.pop(),x.pop())
-try:
-    print(x.pop())
-except:
-    print('Oh no! Something went wrong!')
