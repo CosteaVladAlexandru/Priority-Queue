@@ -8,8 +8,7 @@ cmp = comparation function for heap. default: x>y'''
         self.push_many(orig)
         
     def _cmp(self,a,b):
-        '''comparation function for 2 values.
-Default: x>y'''
+        '''Comparation function for 2 values. Default: x>y'''
         return self.comp(self.nodes[a],self.nodes[b])
         
     def _parent(self,x):
@@ -58,11 +57,10 @@ Default: x>y'''
             k=self._parent(k)
             
     def push_many(self,other):
-        '''push multiple elements into the heap.
-Complexity of O(n+k), compared to O(k log(n+k)) when
-push() is used multiple times, where n is the number
-of elements in the heap and k is the number of
-elements added.'''
+        '''Push multiple elements into the heap.
+Complexity of O(n+k), compared to O(k log(n+k)) when push() is used multiple times.
+n is the number of elements in the heap.
+k is the number of elements added.'''
         if not other:
             return
         self.nodes+=other
@@ -70,11 +68,11 @@ elements added.'''
             self._redo(i)
 
     def max(self):
-        '''returns biggest element in heap. O(1)'''
+        '''Returns biggest element in heap. O(1)'''
         return self.nodes[0]
         
     def pop(self):
-        '''returns and pops biggest element in heap.
+        '''Returns and then deletes biggest element in heap.
 O(log n)'''
         if self.is_empty():
             raise Exception('Heap is empty!')
@@ -85,7 +83,7 @@ O(log n)'''
         return x
         
     def is_empty(self):
-        '''returns True if heap is empty, False otherwise'''
+        '''Returns True if heap is empty, False otherwise'''
         return not self.nodes
         
 def heapsort(lst,cmp=lambda x,y:x<y):
