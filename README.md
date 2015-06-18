@@ -1,2 +1,3 @@
-# priority-queue
-Basic priority queue and heapsort
+# idklol
+
+heapsort i guess
