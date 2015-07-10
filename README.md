@@ -1,3 +1,3 @@
-# idklol
+# Priority Queue
 
-heapsort i guess
+Heapsort and Priority Queue
